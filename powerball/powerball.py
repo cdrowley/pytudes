@@ -1,4 +1,4 @@
-# Refactored Lottery Simulator for Corey Schafer's Tutorial: https://www.youtube.com/watch?v=HZ8uXq5VG2w
+# Refactored Lottery Simulator from Corey Schafer's Tutorial: https://www.youtube.com/watch?v=HZ8uXq5VG2w
 from random import sample, choice
 import json
 
