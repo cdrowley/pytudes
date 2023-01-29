@@ -40,11 +40,13 @@ def check_ticket(nums: lottery_nums, winning_nums: lottery_nums) -> tuple[int, s
     """Determines the win amount and win type for a given ticket and winning draw."""
     white_matches = len(nums["whites"] & winning_nums["whites"])
     red_match = nums["red"] == winning_nums["red"]
-
-    if (white_matches, red_match) in PRIZE_TABLE:
+    try:
         win_amt, win_type = PRIZE_TABLE[(white_matches, red_match)]
         return (win_amt, win_type)
-    raise ValueError("Invalid combination of ticket and winning numbers.")
+    except KeyError:
+        raise ValueError(
+            f"Invalid combination of ticket: {nums} and winning numbers: {winning_nums}."
+        )
 
 
 if __name__ == "__main__":
